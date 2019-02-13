@@ -12,7 +12,7 @@ namespace ThreadStat
         static void Main(string[] args)
         {
             Thread pt = Thread.CurrentThread;
-            pt.Name = "Primary";
+            pt.Name = "My_Primary";
             Console.WriteLine("Current Domain: "+Thread.GetDomain().FriendlyName);
             Console.WriteLine("ID of Context: "+Thread.CurrentContext.ContextID);
             Console.WriteLine("Thread Name: "+pt.Name);

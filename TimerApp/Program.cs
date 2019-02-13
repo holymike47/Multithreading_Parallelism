@@ -48,11 +48,12 @@ namespace TimerApp
             Console.WriteLine("Main() "+Thread.CurrentThread.ManagedThreadId);
             Console.WriteLine("***** Working with Timer type *****\n");
 
-            //Timer _ = new Timer(PrintTime, (new Data() { Name = "Mike" }),0,1000);
+            Timer _ = new Timer(PrintTime, (new Data() { Name = "Mike" }),0,1000);
             //Console.WriteLine("Hit Enter key to terminate...");
+            //Console.ReadLine();
             Data data = new Data() {Message="Thanks Mike" };
             //WaitCallback work = new WaitCallback(data.Print);
-            for (int i = 0; i < 10; i++) ThreadPool.QueueUserWorkItem(data.Print, data);
+           for (int i = 0; i < 10; i++) ThreadPool.QueueUserWorkItem(data.Print, data);
             
             Console.ReadLine();
         }

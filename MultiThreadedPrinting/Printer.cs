@@ -10,7 +10,7 @@ namespace MultiThreadedPrinting
 {
     class Data
     {
-        public int[] ia;
+        public int[] ia ;
        
     }
 
@@ -66,8 +66,9 @@ namespace MultiThreadedPrinting
         static ConsoleColor cc;
         public void PrintNumbers()
         {
-            lock (threadLock)
+           //lock (threadLock)
             {
+               // Console.WriteLine("No Explicit Lock");
                 Console.BackgroundColor = cc++;
                 Console.WriteLine("\nPrintNumbers() is running on Thread: " + Thread.CurrentThread.Name + "\n");
                 //Random r = new Random();

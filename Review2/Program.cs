@@ -8,24 +8,51 @@ using System.Runtime.Remoting.Contexts;
 
 namespace Review2
 {
-    delegate int Sum(int a, int b);
-    [Synchronization]
-    class Car:ContextBoundObject {
-        public Car() {
-            Console.WriteLine(Thread.CurrentContext.ContextID);
-        }
-    }
+    
+    
     class Program
     {
-        static int mySum(int a, int b) => a + b;
+        class Data
+        {
+           public int[] ia;
+            public int[] print(object o) {
+                Data data = o as Data;
+                foreach(int i in data.ia) {
+                    Console.WriteLine(i);
+                   // Thread.Sleep(300);
+                }
+                Console.WriteLine("----------------------------------");
+                return (from na in data.ia where na % 2 == 0 orderby na select na).ToArray();
+            }
+
+            
+        }
+        static void Run()
+        {
+
+            throw new Exception("Error:");
+            //throw null;
+            
+        }
+
+
+        private static string Download()
+        {
+            return "cool";
+        }
         static void Main(string[] args)
         {
-            Func<int, int, int> sum = new Func<int, int, int>(mySum);
-
-            Console.WriteLine(sum.Invoke(3, 6));
+            Data d = new Data() { ia = new[] { 2, 3, 4, 5, 6, 7, 89, 23, 4, 5, 6 } };
+            Task<int[]> t = new Task<int[]>(d.print, d);
             
-            Console.WriteLine(Thread.CurrentContext.ContextID);
-            new Car();
+            t.Start();
+            foreach(int i in t.Result) Console.WriteLine(i);
+            Task<string> t2 = Task.Factory.StartNew<string>(Download);
+            Console.WriteLine(t2.Result);
+            Task<int> t3 = Task.Run(()=>10*10);
+            Console.WriteLine(t3.Result);
         }
+
+        
     }
 }

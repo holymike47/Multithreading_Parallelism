@@ -26,7 +26,7 @@ namespace SimpleMultiThreadApp
                     printer.PrintNumbers();
                     break;
                 case 2:
-                    Thread sec = new Thread(new ThreadStart(printer.PrintNumbers)){ Name = "Secondary"};
+                    Thread sec = new Thread(new ThreadStart(printer.PrintNumbers)) { Name = "Secondary", Priority = ThreadPriority.Normal };
                     sec.Start();
                     break;
                 case 3:

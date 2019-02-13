@@ -21,6 +21,7 @@ namespace PLINQDataProcessingWithCancellation
             }
             catch (OperationCanceledException e)
             {
+                
                 Console.WriteLine(e.Message);
             }
         }
@@ -28,15 +29,15 @@ namespace PLINQDataProcessingWithCancellation
         {
             Console.WriteLine("----------Starting---------");
             Task.Factory.StartNew(()=>ProcessData());
-            for(int i = 0; i < 10; i++)
+            for(int i = 0; i < 20; i++)
             {
                 Console.WriteLine(i);
                 Thread.Sleep(300);
                 if (i == 4) Ct.Cancel();
             }
-            //ProcessData();
+            
             Console.WriteLine("Done");
-            Console.ReadLine();
+           Console.ReadLine();
         }
     }
 }

@@ -23,8 +23,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtomicLock", "AtomicLock\At
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimerApp", "TimerApp\TimerApp.csproj", "{886208B9-C81B-4F88-BDFC-88E9A3C0362B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataParallelismWithForEach", "DataParallelismWithForEach\DataParallelismWithForEach.csproj", "{2EF8B466-690E-4ACD-99FE-E734A9992708}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelDemo", "ParallelDemo\ParallelDemo.csproj", "{2D7A04A9-DE5E-4B29-9943-474E52FD1968}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelInvoke", "ParallelInvoke\ParallelInvoke.csproj", "{7FBE6D47-D600-44D7-BAE3-2D7E158EA7C5}"
@@ -81,10 +79,6 @@ Global
 		{886208B9-C81B-4F88-BDFC-88E9A3C0362B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{886208B9-C81B-4F88-BDFC-88E9A3C0362B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{886208B9-C81B-4F88-BDFC-88E9A3C0362B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2EF8B466-690E-4ACD-99FE-E734A9992708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2EF8B466-690E-4ACD-99FE-E734A9992708}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2EF8B466-690E-4ACD-99FE-E734A9992708}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2EF8B466-690E-4ACD-99FE-E734A9992708}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2D7A04A9-DE5E-4B29-9943-474E52FD1968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2D7A04A9-DE5E-4B29-9943-474E52FD1968}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D7A04A9-DE5E-4B29-9943-474E52FD1968}.Release|Any CPU.ActiveCfg = Release|Any CPU

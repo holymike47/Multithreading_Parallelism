@@ -10,25 +10,29 @@ namespace CSharpAsync
     
     class Program
     {
-        private static string DoWork()
+         static string DoWork()
         {
             Console.WriteLine("working...");
             Thread.Sleep(5000);
             Console.WriteLine("OK...");
-            return "Done With Work";
+            return "i am done now!";
         }//
-        private static async Task<string> DoWorkAsync()
+         static async Task<string> DoWorkAsync()
         {
             return await Task.Run(()=> {
-                Console.WriteLine("working...");
-                Thread.Sleep(5000);
-                Console.WriteLine("OK...");
-                return "Done With Work";
+                for (int i = 0; i < 5; i++)
+                {
+                    Console.WriteLine("working...");
+                    //Task.Delay(5000);
+                    Console.WriteLine("OK...");
+                }
+                return "i am done now async";
             });
         }//
         static async Task VoidAsync()
         {
             await Task.Run(()=> {
+
                 Console.WriteLine("working...");
                 Thread.Sleep(5000);
                 Console.WriteLine("Ok...");
@@ -50,13 +54,13 @@ namespace CSharpAsync
         static async Task Main(string[] args)
         {
             //Task.Factory.StartNew(() => Console.WriteLine(DoWork()));
-            string msg = default;
+            string msg = "Test";
             //Console.WriteLine(DoWork());
-            //await DoWorkAsync();
+             msg = await DoWorkAsync();
             //DoWork();
-            //await VoidAsync();
+            await VoidAsync();
             //MultiAwait();
-            CallAsync();
+            //CallAsync();
             Console.WriteLine(msg);
             Console.WriteLine("Completed");
             Console.ReadLine();
